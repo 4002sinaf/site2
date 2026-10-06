@@ -281,6 +281,8 @@
 
 /* Hero Content (Left) */
 .hero__content {
+  position: relative;
+  z-index: 2;
   max-width: 580px;
   display: flex;
   flex-direction: column;

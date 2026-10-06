@@ -37,13 +37,25 @@ function initMobileNav() {
 
   const navLinks = navMenu.querySelectorAll('.header__nav-link, .btn');
 
+  const closeMenu = () => {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('is-active');
+    document.body.style.overflow = '';
+  };
+
+  const openMenu = () => {
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    navMenu.classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+  };
+
   const toggleMenu = () => {
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('is-active');
-
-    // Prevent body scrolling when mobile menu is open
-    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    if (isExpanded) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   };
 
   toggleBtn.addEventListener('click', toggleMenu);
@@ -52,11 +64,24 @@ function initMobileNav() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (navMenu.classList.contains('is-active')) {
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('is-active');
-        document.body.style.overflow = '';
+        closeMenu();
       }
     });
+  });
+
+  // Close menu on ESC key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+      closeMenu();
+      toggleBtn.focus();
+    }
+  });
+
+  // Reset menu state on window resize back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && navMenu.classList.contains('is-active')) {
+      closeMenu();
+    }
   });
 }
 
