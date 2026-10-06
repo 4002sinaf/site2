@@ -90,6 +90,16 @@
          HERO SECTION
          ==================================================================== -->
     <section class="hero" aria-labelledby="hero-title">
+      <!-- Mídia do Hero: Fotografia full-bleed ocupando todo o Hero com fade escuro -->
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/img/projetos/bghero.png" 
+             alt="" 
+             class="hero__bg-img"
+             width="1672"
+             height="941">
+        <div class="hero__bg-overlay"></div>
+      </div>
+
       <div class="container hero__container">
         <!-- Conteúdo do Hero (Esquerda em Desktop, Topo em Mobile) -->
         <div class="hero__content">
@@ -124,16 +134,6 @@
               </svg>
             </a>
           </div>
-        </div>
-
-        <!-- Mídia do Hero (Fundo integrado no Desktop, Fotografia ordenada no Mobile) -->
-        <div class="hero__bg" aria-hidden="true">
-          <img src="assets/img/projetos/bghero.png" 
-               alt="" 
-               class="hero__bg-img"
-               width="1672"
-               height="941">
-          <div class="hero__bg-overlay"></div>
         </div>
       </div>
     </section>
