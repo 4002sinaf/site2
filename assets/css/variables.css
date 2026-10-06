@@ -1,0 +1,42 @@
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --black: #0c0d0e;
+  --black-soft: #141517;
+  --charcoal: #1c1d1f;
+  --charcoal-light: #252628;
+
+  --copper: #c77738;
+  --copper-light: #dd985d;
+  --copper-dark: #925127;
+  --copper-glow: rgba(199, 119, 56, 0.25);
+
+  --cream: #f5f0e8;
+  --off-white: #fcfaf6;
+  --white: #ffffff;
+
+  --text: #191919;
+  --text-muted: #8e8b86;
+  --text-light-muted: #a6a29b;
+
+  /* Typography */
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout */
+  --container-max-width: 1360px;
+  --container-padding: 2rem;
+  --header-height: 74px;
+
+  /* Transitions & Shadows */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+  --shadow-header: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+  --border-copper: 1px solid rgba(199, 119, 56, 0.4);
+}
+
